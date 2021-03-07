@@ -13,6 +13,7 @@ public class Sinus {
         return value;
     }
 
+    //TODO: change accuracy check to difference between current and previous values
     public double getSinus(double arg) {
         this.arg = arg;
         int k = 0;
