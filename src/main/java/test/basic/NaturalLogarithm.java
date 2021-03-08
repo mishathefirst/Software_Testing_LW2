@@ -14,13 +14,11 @@ public class NaturalLogarithm {
         return value;
     }
 
-    //TODO: accuracy check
     public double getNLogarithm(double arg) {
         this.arg = arg;
         int k = 0;
-        double previousValue = 0;
-        //while (Math.abs(value - previousValue) > Math.pow(10, -5)) {
-        while (k < 5) {
+        double previousValue = -100;
+        while (Math.abs(value - previousValue) > Math.pow(10, -5)) {
             previousValue = value;
             value = value + ((Math.pow(-1, k) * Math.pow((arg - 1), (k + 1)) / (k + 1)));
             k++;

@@ -13,13 +13,11 @@ public class Sinus {
         return value;
     }
 
-    //TODO: change accuracy check to difference between current and previous values
     public double getSinus(double arg) {
         this.arg = arg;
         int k = 0;
-        double previousValue = 0;
-        //while (Math.abs(value - previousValue) > Math.pow(10, -5)) {
-        while (k < 5) {
+        double previousValue = -100;
+        while (Math.abs(value - previousValue) > Math.pow(10, -5)) {
             previousValue = value;
             value = value + ((Math.pow(-1, k) * Math.pow(arg, (2 * k + 1)) / getFactorial(2 * k + 1)));
             k++;
