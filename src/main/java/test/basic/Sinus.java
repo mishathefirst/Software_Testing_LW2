@@ -13,6 +13,7 @@ public class Sinus {
         return value;
     }
 
+    //TODO: correct result on out of [-3.14; 3.14] range
     public double getSinus(double arg) {
         int period = 0;
         if (arg > Math.PI) {
