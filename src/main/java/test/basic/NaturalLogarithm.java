@@ -15,14 +15,18 @@ public class NaturalLogarithm {
     }
 
     public double getNLogarithm(double arg) {
-        this.arg = arg;
-        int k = 0;
-        double previousValue = -100;
-        while (Math.abs(value - previousValue) > Math.pow(10, -5)) {
-            previousValue = value;
-            value = value + ((Math.pow(-1, k) * Math.pow((arg - 1), (k + 1)) / (k + 1)));
-            k++;
+        if (arg > 0) {
+            this.arg = arg;
+            int k = 0;
+            double previousValue = -100;
+            while (Math.abs(value - previousValue) > Math.pow(10, -5)) {
+                previousValue = value;
+                value = value + ((Math.pow(-1, k) * Math.pow((arg - 1), (k + 1)) / (k + 1)));
+                k++;
+            }
+            return value;
+        } else {
+            throw new ArithmeticException();
         }
-        return value;
     }
 }

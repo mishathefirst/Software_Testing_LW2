@@ -14,10 +14,18 @@ public class Sinus {
     }
 
     public double getSinus(double arg) {
+        int period = 0;
+        if (arg > Math.PI) {
+            period = (int) (arg / Math.PI);
+            arg = arg % Math.PI;
+            if (period % 2 != 0) {
+                arg = -arg;
+            }
+        }
         this.arg = arg;
         int k = 0;
         double previousValue = -100;
-        while (Math.abs(value - previousValue) > Math.pow(10, -5)) {
+        while (Math.abs(value - previousValue) > Math.pow(10, -2)) {
             previousValue = value;
             value = value + ((Math.pow(-1, k) * Math.pow(arg, (2 * k + 1)) / getFactorial(2 * k + 1)));
             k++;
