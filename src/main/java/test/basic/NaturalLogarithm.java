@@ -10,6 +10,10 @@ public class NaturalLogarithm {
         this.value = getNLogarithm(arg);
     }
 
+    public double getArg() {
+        return arg;
+    }
+
     public double getValue() {
         return value;
     }

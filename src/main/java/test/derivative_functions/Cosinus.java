@@ -4,6 +4,11 @@ import test.basic.Sinus;
 
 public class Cosinus {
 
+    private double value;
+    public double getValue() {
+        return value;
+    }
+
     //TODO: + and - change in cosinus
     public double getCosinus(double x) {
         Sinus sinus = new Sinus();
