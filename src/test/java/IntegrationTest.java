@@ -4,6 +4,7 @@ import org.mockito.Mockito;
 import test.basic.NaturalLogarithm;
 import test.basic.Sinus;
 import test.derivative_functions.*;
+import test.system.Function;
 
 import static org.mockito.Matchers.anyDouble;
 import static org.mockito.Mockito.when;
@@ -76,11 +77,13 @@ public class IntegrationTest {
 
     @Test
     public void functionIntegration() {
-        NaturalLogarithm test = Mockito.mock(NaturalLogarithm.class);
-        when(test.getNLogarithm(anyDouble())).thenReturn(1.0);
+        Sinus sin = Mockito.mock(Sinus.class);
+        when(sin.getSinus(anyDouble())).thenReturn(-0.479426);
+        Tangent tan = Mockito.mock(Tangent.class);
+        when(tan.getTangent(anyDouble())).thenReturn(-0.546302);
+        Function func = new Function();
 
-
-
+        assertEquals(-1.6064, func.getFuncValue(-0.5), 0.01);
     }
 
 

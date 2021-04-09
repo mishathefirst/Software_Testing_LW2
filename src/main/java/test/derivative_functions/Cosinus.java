@@ -9,7 +9,7 @@ public class Cosinus {
         return value;
     }
 
-    //TODO: + and - change in cosinus
+
     public double getCosinus(double x) {
         Sinus sinus = new Sinus();
         return Math.sqrt(1 - Math.pow(sinus.getSinus(x), 2));
